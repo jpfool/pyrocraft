@@ -59,9 +59,16 @@ export default function TrackingPage() {
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-[#08080a] pt-12 sm:pt-20 px-4 pb-20">
       <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-8 sm:mb-12">
-          <h1 className="font-cinzel text-2xl sm:text-4xl text-zinc-900 dark:text-[#f0ead6] font-bold tracking-tight mb-2">Track Shipment</h1>
-          <p className="font-outfit text-zinc-400 text-xs sm:text-sm uppercase tracking-[0.3em] font-black">Live Progress Monitor</p>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8 sm:mb-12">
+          <div>
+            <h1 className="font-cinzel text-2xl sm:text-4xl text-zinc-900 dark:text-[#f0ead6] font-bold tracking-tight mb-2">Track Shipment</h1>
+            <p className="font-outfit text-zinc-400 text-xs sm:text-sm uppercase tracking-[0.3em] font-black">Live Progress Monitor</p>
+          </div>
+          <Link href="/track">
+            <button className="text-[0.7rem] uppercase tracking-[0.2em] font-black py-3 px-5 rounded-xl border border-zinc-200 dark:border-[#2a2820] bg-white dark:bg-[#13131a] text-zinc-700 dark:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-[#1f1f24] transition-all">
+              Back to Tracking
+            </button>
+          </Link>
         </div>
 
         {/* Vital Info Grid */}
