@@ -7,7 +7,6 @@ from typing import List
 
 router = APIRouter(prefix="/api/products", tags=["products"])
 
-@router.get("", response_model=PaginatedProductResponse)
 @router.get("/", response_model=PaginatedProductResponse)
 def get_products(
     category: str = Query(None),

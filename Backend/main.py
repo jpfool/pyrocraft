@@ -1,7 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from starlette.middleware.proxy_headers import ProxyHeadersMiddleware
 from pathlib import Path
 import os
 from app.database import engine, Base
@@ -19,8 +18,6 @@ app = FastAPI(
     description="Premium Crackers E-commerce API",
     version="1.0.0"
 )
-
-app.add_middleware(ProxyHeadersMiddleware, trusted_hosts="*")
 
 app.add_middleware(
     CORSMiddleware,
