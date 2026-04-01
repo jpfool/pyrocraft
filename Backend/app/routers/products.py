@@ -62,7 +62,8 @@ def get_product(product_id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="Product not found")
     return product
 
-@router.post("/", response_model=ProductResponse)
+@router.post("", response_model=ProductResponse)
+# @router.post("/", response_model=ProductResponse
 def create_product(product: ProductCreate, db: Session = Depends(get_db)):
     """Create a new product"""
     db_product = Product(**product.dict())
