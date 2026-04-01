@@ -28,7 +28,7 @@ def export_orders_summary(db: Session = Depends(get_db)):
         headers={"Content-Disposition": "attachment; filename=User_Orders_Summary.pdf"}
     )
 
-@router.post("/", response_model=OrderResponse)
+@router.post("", response_model=OrderResponse)
 def create_order(order_data: OrderCreate, db: Session = Depends(get_db)):
     """Create a new order"""
     
@@ -166,7 +166,7 @@ def update_order_status(
     
     return {"order_number": order_number, "new_status": new_status}
 
-@router.get("/")
+@router.get("")
 def list_orders(skip: int = 0, limit: int = 50, db: Session = Depends(get_db)):
     """List all orders (Admin)"""
     orders = db.query(Order).order_by(Order.created_at.desc()).offset(skip).limit(limit).all()
