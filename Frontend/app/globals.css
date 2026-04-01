@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  button {
+    @apply font-jost cursor-pointer transition-all duration-300;
+  }
+
+  input,
+  select,
+  textarea {
+    @apply font-jost text-zinc-900 dark:text-zinc-100 bg-white dark:bg-[#13131a];
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-1;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-zinc-100 dark:bg-[#08080a];
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gold rounded-sm;
+  }
+}
+
+@layer components {
+  .scrollable::-webkit-scrollbar {
+    @apply w-1.5;
+  }
+
+  .scrollable::-webkit-scrollbar-track {
+    @apply bg-zinc-200 dark:bg-white/5;
+  }
+
+  .scrollable::-webkit-scrollbar-thumb {
+    @apply bg-gold rounded;
+  }
+}
